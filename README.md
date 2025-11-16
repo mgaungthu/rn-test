@@ -1,50 +1,109 @@
-# Welcome to your Expo app 👋
+# React Native Authentication App (Expo)
 
-This is an [Expo](https://expo.dev) project created with [`create-expo-app`](https://www.npmjs.com/package/create-expo-app).
+A simple React Native Expo application demonstrating user authentication using **Context API**, **Expo Router**, and **AsyncStorage**.
 
-## Get started
+---
 
-1. Install dependencies
+## 🚀 Features
 
-   ```bash
-   npm install
-   ```
+- **User Registration**
+- **User Login**
+- **Logout Functionality**
+- **AuthContext Global State Management**
+- **Protected Routes**
+- **Reusable Components**
+  - AppButton
+  - AppInput
+  - FormErrorText
+  - AppKeyboardAvoid
+- **Form Validation**
+- **User Info Card Display**
 
-2. Start the app
+---
 
-   ```bash
-   npx expo start
-   ```
+## 📦 Project Setup
 
-In the output, you'll find options to open the app in a
-
-- [development build](https://docs.expo.dev/develop/development-builds/introduction/)
-- [Android emulator](https://docs.expo.dev/workflow/android-studio-emulator/)
-- [iOS simulator](https://docs.expo.dev/workflow/ios-simulator/)
-- [Expo Go](https://expo.dev/go), a limited sandbox for trying out app development with Expo
-
-You can start developing by editing the files inside the **app** directory. This project uses [file-based routing](https://docs.expo.dev/router/introduction).
-
-## Get a fresh project
-
-When you're ready, run:
+### 1️⃣ Install Dependencies
 
 ```bash
-npm run reset-project
+npm install
 ```
 
-This command will move the starter code to the **app-example** directory and create a blank **app** directory where you can start developing.
+or
 
-## Learn more
+```bash
+yarn install
+```
 
-To learn more about developing your project with Expo, look at the following resources:
+---
 
-- [Expo documentation](https://docs.expo.dev/): Learn fundamentals, or go into advanced topics with our [guides](https://docs.expo.dev/guides).
-- [Learn Expo tutorial](https://docs.expo.dev/tutorial/introduction/): Follow a step-by-step tutorial where you'll create a project that runs on Android, iOS, and the web.
+## ▶️ Run the App
 
-## Join the community
+```bash
+npx expo start
+```
 
-Join our community of developers creating universal apps.
+- Press **i** to open iOS Simulator  
+- Press **a** to open Android Emulator  
+- Scan QR with Expo Go on your device  
 
-- [Expo on GitHub](https://github.com/expo/expo): View our open source platform and contribute.
-- [Discord community](https://chat.expo.dev): Chat with Expo users and ask questions.
+---
+
+## 📁 Folder Structure
+
+```
+app/
+ ├─ (auth)/        # Login & Register screens
+ ├─ (app)/         # Protected Home screen
+ ├─ _layout.tsx    # Root wrapper for AuthProvider
+components/        # Reusable UI components
+context/           # AuthContext for login/signup/logout
+utils/             # Validation helpers
+```
+
+---
+
+## 🔐 Authentication Flow
+
+- User signs up → stored in AsyncStorage → redirected to `(app)`
+- User logs in → checked against stored data → redirected to `(app)`
+- User logs out → cleared from AsyncStorage → redirected to `(auth)`
+- Protected screens require login (using ProtectedRoute)
+
+---
+
+## 🧩 Reusable Components
+
+### ✔ AppInput
+Styled input with optional secure text and password visibility toggle.
+
+### ✔ AppButton
+Primary / Outline button with optional loading state.
+
+### ✔ FormErrorText
+Standardized validation error display.
+
+### ✔ AppKeyboardAvoid
+Handles keyboard overlapping on mobile screens.
+
+---
+
+## 📝 Validation
+
+Utility functions inside `utils/validation.ts`:
+
+- `validateName()`
+- `validateEmail()`
+- `validatePassword()`
+
+Used by both Login & Register screens.
+
+---
+
+## 🎉 Summary
+
+This project is a clean starter for any Expo Router app requiring authentication.  
+You can easily extend it with API integration, user profiles, or advanced navigation.
+
+Enjoy building! 🚀
+# rn-test
