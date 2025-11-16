@@ -59,6 +59,7 @@ app/
 components/        # Reusable UI components
 context/           # AuthContext for login/signup/logout
 utils/             # Validation helpers
+hooks/             # Custom reusable hooks (e.g., useAuthRedirect)
 ```
 
 ---
